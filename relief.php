@@ -69,9 +69,13 @@
                 $sql="SELECT * FROM teachers WHERE TeacherID=".$id;
                 $result = mysqli_query($con,$sql);
 
-
                 while($row = mysqli_fetch_array($result)) {
+                  $sql1 = "SELECT * FROM timetable WHERE TeacherID=".$row['TeacherID']." AND day=".$day;
+                  $result1 = mysqli_query($con,$sql1);
                   echo "<tr><td>".$row['TeacherID']."</td><td>".$row['Initials']." ".$row['OtherNames']." ".$row['LastName']."</td></tr>";
+                  while($row1 = mysql_fetch_array($result1)){
+                  }
+                  
                 }
               }
               echo "</table>";
